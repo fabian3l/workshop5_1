@@ -15,14 +15,15 @@ public class MockBookService implements BookService{
     public static void setNextId(long nextId) {
         MockBookService.nextId = nextId;
     }
-
-
-
     public MockBookService(){
         books= new ArrayList<>();
         books.add(new Book(1L, "12512512", "Start a fire", "Pizgacz", "PWN", "romans"));
         books.add(new Book(2L, "152214124", "Maly ksiaze", "antoni di saintexuper", "MG", "filozofia"));
         books.add(new Book(3L, "1251241412", "gwiazdy nadzieji", "i.m dark", "PWN", "romans"));
+    }
+    @Override
+    public List<Book> getBooks() {
+        return books;
     }
 
     @Override
@@ -34,11 +35,6 @@ public class MockBookService implements BookService{
     @Override
     public Optional<Book> getBookById(Long id) {
         return books.stream().filter(item -> item.getId().equals(id)).findFirst();
-    }
-
-    @Override
-    public List<Book> getBooks() {
-        return books;
     }
 
     @Override

@@ -2,7 +2,6 @@ package pl.coderslab.app;
 
 import org.springframework.stereotype.Controller;
 
-
 public class Book {
     private Long id;
     private String isbn;
@@ -18,6 +17,9 @@ public class Book {
         this.author = author;
         this.publisher = publisher;
         this.type = type;
+    }
+    public Book(){
+
     }
     public Long getId() {
         return id;
